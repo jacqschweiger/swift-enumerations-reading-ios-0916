@@ -51,3 +51,35 @@ playerDidMove(direction2)
 playerDidMove(direction3)
 
 playerDidMove(.left)
+
+
+enum cardinalDirections {
+    case north
+    case south
+    case east
+    case west
+    
+    var allCaps: String {
+        switch self {
+        case .north:
+            return "NORTH"
+        case .south:
+            return "SOUTH"
+        case .east:
+            return "EAST"
+        case .west:
+            return "WEST"
+        }
+    }
+}
+
+func regions(_ region: cardinalDirections) {
+    print("Let's go \(region.allCaps)!")
+}
+
+regions(.east) //calls the function with the region = the enum case .east
+
+let region1: cardinalDirections = .north //need to use the dot, can't call the var allCaps here
+
+print(region1)
+print(region1.allCaps)
